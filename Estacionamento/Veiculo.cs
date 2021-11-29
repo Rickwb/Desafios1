@@ -1,11 +1,11 @@
-﻿using Desafio1_Estacionamento.Models;
+﻿using Estacionamento1.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Desafio1_Estacionamento
+namespace Estacionamento1
 {
     public abstract class Veiculo
     {

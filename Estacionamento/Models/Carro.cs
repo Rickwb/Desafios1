@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Desafio1_Estacionamento.Models
+namespace Estacionamento1.Models
 {
      public class Carro : Veiculo
     {
-        public Carro(string placa, string modelo, string marca, Cliente cliente, global::Estacionamento estacionmaneto) : base(placa, modelo, marca, cliente, estacionmaneto)
+        public Carro(string placa, string modelo, string marca, Cliente cliente) : base(placa, modelo, marca, cliente)
         {
         }
     }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Desafio1_Estacionamento.Models
+namespace Estacionamento1.Models
 {
     public class Estacionamento
     {

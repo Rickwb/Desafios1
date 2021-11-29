@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Desafio1_Estacionamento.Models
+namespace Estacionamento1.Models
 {
     public class Cliente
     {
@@ -13,7 +13,7 @@ namespace Desafio1_Estacionamento.Models
                        string nome,
                        string cpf,
                        Ticket? ticketAtual,
-                       global::Estacionamento estacionamento,
+                       Estacionamento estacionamento,
                        Veiculo veiculo)
 
         {
@@ -30,7 +30,7 @@ namespace Desafio1_Estacionamento.Models
         public string Nome { get; private set; }
         public string Cpf { get; private set; }
         public Ticket? TicketAtual { get; set; }
-        public global::Estacionamento Estacionamento { get; set; }
+        public Estacionamento Estacionamento { get; set; }
         public List<Ticket> TickekAntigos { get; private set; }
         public decimal Multas { get; set; }
         

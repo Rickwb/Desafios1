@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Desafio1_Estacionamento.Models
+namespace Estacionamento1.Models
 {
     public class Ticket
     {
@@ -65,7 +65,7 @@ namespace Desafio1_Estacionamento.Models
         {
             if (TempoTotal.HasValue)
             {
-                if (Cliente.Veiculo is Carro)
+                if (Cliente.Veiculo is Moto)
                 {
 
                     if (Diaria > 0)
