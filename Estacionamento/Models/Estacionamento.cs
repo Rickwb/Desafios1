@@ -34,7 +34,7 @@ namespace Desafio1_Estacionamento.Models
         }
         public Ticket GerarTicket(Cliente cli, int diarias, bool lavacao)
         {
-            if (cli.Carro is null)
+            if (cli.Veiculo is Moto)
             {
                 var tk = new Ticket(cli, diarias);
                 _todosTickectsAbertos.Add(tk);

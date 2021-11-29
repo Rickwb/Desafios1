@@ -8,7 +8,7 @@ namespace Desafio1_Estacionamento.Models
 {
     public class Moto : Veiculo
     {
-        public Moto(string placa, string modelo, string marca, Cliente cliente, Estacionamento estacionmaneto) : base(placa, modelo, marca, cliente, estacionmaneto)
+        public Moto(string placa, string modelo, string marca, Cliente cliente, global::Estacionamento estacionmaneto) : base(placa, modelo, marca, cliente, estacionmaneto)
         {
         }
     }

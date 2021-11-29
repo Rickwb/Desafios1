@@ -22,11 +22,10 @@ namespace Desafio1_Estacionamento.Models
             Cliente = cliente;
             HorarioChegada = DateTime.Now;
             Diaria = diaria;
-            if (cliente.Moto is not null)
-            {
+            if (cliente.Veiculo is Moto)
                 Lavacao = false;
-            }
-            Lavacao = lavacao;
+            else
+                Lavacao = lavacao;
         }
 
         public Guid Id { get; private set; }
@@ -66,39 +65,36 @@ namespace Desafio1_Estacionamento.Models
         {
             if (TempoTotal.HasValue)
             {
-                switch (Cliente.Carro)
+                if (Cliente.Veiculo is Carro)
                 {
-                    case null:
-                            if (Diaria > 0)
-                            {
-                                TotalPagar = Diaria < TempoTotal.Value.Days ? TempoTotal.Value.Days * 25 + TempoTotal.Value.Hours * 5 : TempoTotal.Value.Days * 25;
-                            }
-                            else
-                            {
-                                TotalPagar = TempoTotal.Value < TimeSpan.FromMinutes(15) ? TotalPagar = 2M : TotalPagar = 5m + (TempoTotal.Value.Hours - 1) * 5m; ;
-                            }
-                            break;
-                    case not null:
-                        if (Diaria > 0)
-                        {
-                            if (Lavacao)
-                                TotalPagar = Diaria < TempoTotal.Value.Days ? TempoTotal.Value.Days * 65 + TempoTotal.Value.Hours * 10m : TempoTotal.Value.Days * 50;
-                            else
-                                TotalPagar = Diaria < TempoTotal.Value.Days ? TempoTotal.Value.Days * 50 + TempoTotal.Value.Hours * 10m : TempoTotal.Value.Days * 50;
-                        }
-                        else
-                        {
-                            TotalPagar = TempoTotal.Value < TimeSpan.FromMinutes(15) ? TotalPagar = 2M : TotalPagar = 10m + (TempoTotal.Value.Hours - 1) * 10m; ;
-                        }
-                        break;
-                    default:
-                        TotalPagar = 0;
-                        break;
-                }
-                return TotalPagar;
 
+                    if (Diaria > 0)
+                    {
+                        TotalPagar = Diaria < TempoTotal.Value.Days ? TempoTotal.Value.Days * 25 + TempoTotal.Value.Hours * 5 : TempoTotal.Value.Days * 25;
+                    }
+                    else
+                    {
+                        TotalPagar = TempoTotal.Value < TimeSpan.FromMinutes(15) ? TotalPagar = 2M : TotalPagar = 5m + (TempoTotal.Value.Hours - 1) * 5m; ;
+                    }
+                }
+                else
+                { 
+                        if (Diaria > 0)
+                    {
+                        if (Lavacao)
+                            TotalPagar = Diaria < TempoTotal.Value.Days ? TempoTotal.Value.Days * 65 + TempoTotal.Value.Hours * 10m : TempoTotal.Value.Days * 50;
+                        else
+                            TotalPagar = Diaria < TempoTotal.Value.Days ? TempoTotal.Value.Days * 50 + TempoTotal.Value.Hours * 10m : TempoTotal.Value.Days * 50;
+                    }
+                    else
+                    {
+                        TotalPagar = TempoTotal.Value < TimeSpan.FromMinutes(15) ? TotalPagar = 2M : TotalPagar = 10m + (TempoTotal.Value.Hours - 1) * 10m; ;
+                    }
+                }
             }
-            return 0;
+            return TotalPagar;
+
         }
-    }
+        }
+}
 }
