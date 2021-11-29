@@ -1,0 +1,9 @@
+Raca1,313
+Raca2,325
+Raca3,346
+Raca4,355
+Raca5,200
+Raca6,250
+Raca7,275
+Raca8,400
+Raca9,450
